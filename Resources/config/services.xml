@@ -8,10 +8,10 @@
         <service id="gubler.uuid_encoder.default_encoder" class="Gubler\UuidEncoder\UuidEncoder">
             <argument></argument>
         </service>
-        <service id="gubler.uuid_encoder.url_encoder" class="Gubler\UuidEncoderBundle\UrlUuidEncoder">
+        <service id="gubler.uuid_encoder.url_encoder" class="Gubler\UuidEncoderBundle\Util\UrlUuidEncoder">
             <argument></argument>
         </service>
-        <service id="gubler.uuid_encoder.default_encoder" class="Gubler\UuidEncoderBundle\FilesystemUuidEncoder">
+        <service id="gubler.uuid_encoder.filesystem_encoder" class="Gubler\UuidEncoderBundle\Util\FilesystemUuidEncoder">
             <argument></argument>
         </service>
     </services>
