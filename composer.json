@@ -1,0 +1,48 @@
+{
+    "name": "gubler/uuid-encoder-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides Symfony integration for gubler/uuid-encoder.",
+    "keywords": [ "uuid", "bundle", "symfony", "gubler" ],
+    "homepage": "https://github.com/gubler/GublerUuidEncoderBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daryl Gubler",
+            "email": "daryl@dev88.co",
+            "homepage": "http://dev88.co"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gubler/GublerUuidEncoderBundle/issues",
+        "source": "https://github.com/gubler/GublerUuidEncoderBundle"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gubler\\UuidEncoderBundle\\": ""
+        },
+        "exclude-from-classmap": [ "/Tests/" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gubler\\UuidEncoderBundle\\Tests\\": "/Tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "gubler/uuid-encoder": "^0.1",
+        "symfony/config": "^5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/http-kernel": "^4.3|^5.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.3|^5.0",
+        "twig/twig": "^2.4|^3.0"
+    },
+    "suggest": {
+        "twig/twig": "required to use the provided Twig extension. Version 2.4 or greater needed"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {}
+}
