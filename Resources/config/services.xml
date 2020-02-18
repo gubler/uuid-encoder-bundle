@@ -5,14 +5,32 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="gubler.uuid_encoder.default_encoder" class="Gubler\UuidEncoder\UuidEncoder">
+        <service id="gubler.uuid_encoder.default_encoder" class="Gubler\UuidEncoder\UuidEncoder" public="true">
             <argument></argument>
         </service>
-        <service id="gubler.uuid_encoder.url_encoder" class="Gubler\UuidEncoderBundle\Util\UrlUuidEncoder">
+        <service id="Gubler\UuidEncoder\UuidEncoder" alias="gubler.uuid_encoder.default_encoder" />
+
+        <service id="gubler.uuid_encoder.url_encoder" class="Gubler\UuidEncoderBundle\Util\UrlUuidEncoder" public="true">
             <argument></argument>
         </service>
-        <service id="gubler.uuid_encoder.filesystem_encoder" class="Gubler\UuidEncoderBundle\Util\FilesystemUuidEncoder">
+        <service id="Gubler\UuidEncoderBundle\Util\UrlUuidEncoder" alias="gubler.uuid_encoder.url_encoder" />
+
+        <service id="gubler.uuid_encoder.filesystem_encoder" class="Gubler\UuidEncoderBundle\Util\FilesystemUuidEncoder" public="true">
             <argument></argument>
+        </service>
+        <service id="Gubler\UuidEncoderBundle\Util\FilesystemUuidEncoder" alias="gubler.uuid_encoder.filesystem_encoder" />
+
+        <service id="gubler.uuid_encoder.twig.extension.uuid_encoder" class="Gubler\UuidEncoderBundle\Twig\UuidEncoderExtension">
+            <argument type="service" id="gubler.uuid_encoder.default_encoder" />
+            <tag name="twig.extension" />
+        </service>
+        <service id="gubler.uuid_encoder.twig.extension.url_uuid_encoder" class="Gubler\UuidEncoderBundle\Twig\UrlUuidEncoderExtension">
+            <argument type="service" id="gubler.uuid_encoder.url_encoder" />
+            <tag name="twig.extension" />
+        </service>
+        <service id="gubler.uuid_encoder.twig.extension.filesystem_uuid_encoder" class="Gubler\UuidEncoderBundle\Twig\FilesystemUuidEncoderExtension">
+            <argument type="service" id="gubler.uuid_encoder.filesystem_encoder" />
+            <tag name="twig.extension" />
         </service>
     </services>
 </container>
