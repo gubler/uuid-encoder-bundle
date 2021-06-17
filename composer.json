@@ -32,7 +32,7 @@
         "gubler/uuid-encoder": "^0.5",
         "symfony/config": "5.*",
         "symfony/dependency-injection": "5.*",
-        "symfony/http-kernel": "^4.3 || 5.*"
+        "symfony/http-kernel": "^4.3 || >=5.1.5"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^4.3 || 5.*",
