@@ -28,15 +28,15 @@
         }
     },
     "require": {
-        "php": "^7.1",
-        "gubler/uuid-encoder": "^0.4",
-        "symfony/config": "^5.0",
-        "symfony/dependency-injection": "^5.0",
-        "symfony/http-kernel": "^4.3|^5.0"
+        "php": "^7.1 || ^8.0",
+        "gubler/uuid-encoder": "^0.5",
+        "symfony/config": "5.*",
+        "symfony/dependency-injection": "5.*",
+        "symfony/http-kernel": "^4.3 || 5.*"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.3|^5.0",
-        "twig/twig": "^2.4|^3.0"
+        "symfony/phpunit-bridge": "^4.3 || 5.*",
+        "twig/twig": "^2.4 || ^3.0"
     },
     "suggest": {
         "twig/twig": "required to use the provided Twig extension. Version 2.4 or greater needed"
